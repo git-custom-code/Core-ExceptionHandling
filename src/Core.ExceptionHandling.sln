@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.ExceptionHandling", "Core.ExceptionHandling\Core.ExceptionHandling.csproj", "{80988AE8-74D6-4336-8F7E-CEB602C7429E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{590D89DF-1542-4000-9E96-A2223F8B45B2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9E01E02B-184B-4AEF-B058-42332CF262A5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.config = .nuget\NuGet.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80988AE8-74D6-4336-8F7E-CEB602C7429E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80988AE8-74D6-4336-8F7E-CEB602C7429E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80988AE8-74D6-4336-8F7E-CEB602C7429E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80988AE8-74D6-4336-8F7E-CEB602C7429E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E01E02B-184B-4AEF-B058-42332CF262A5} = {590D89DF-1542-4000-9E96-A2223F8B45B2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {493070A3-0C92-47F7-B347-1A307E5E4CDD}
+	EndGlobalSection
+EndGlobal
