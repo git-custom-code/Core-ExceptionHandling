@@ -6,7 +6,8 @@ namespace CustomCode.Core.ExceptionHandling
     using System.Linq;
 
     /// <summary>
-    /// 
+    /// A readonly collection whose main purpose is to override the <see cref="ToString"/>
+    /// method to provide an improved debug experience for developers.
     /// </summary>
     /// <typeparam name="T"> The type of the collection's data elements. </typeparam>
     public sealed class ReadonlyCollection<T> : IEnumerable<T>
