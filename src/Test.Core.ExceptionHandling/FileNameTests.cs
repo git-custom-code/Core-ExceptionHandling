@@ -42,15 +42,15 @@ namespace CustomCode.Core.ExceptionHandling.Tests
 
         #endregion
 
-        [Fact(DisplayName = "Successfully get file name")]
+        [Fact(DisplayName = "Successfully get the expcetion's file name")]
         public void GetLineNumberSuccessfully()
         {
             Given(() => ThrowException())
             .When(exception => exception.GetFileName())
-            .Then(fileName => fileName.Should().Be($"{nameof(FileNameTests)}.cs"));
+            .Then(fileName => fileName.Should().EndWith($"{nameof(FileNameTests)}.cs"));
         }
 
-        [Fact(DisplayName = "Successfully get causing file name")]
+        [Fact(DisplayName = "Successfully get exception's causing file name")]
         public void GetCausingLineNumberSuccessfully()
         {
             Given(() => ThrowException())
@@ -59,7 +59,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
                     exception.TryGetCausingFileName(out var causingFileName);
                     return causingFileName;
                 })
-            .Then(fileName => fileName.Should().Be($"{nameof(FileNameTests)}.cs"));
+            .Then(fileName => fileName.Should().EndWith($"{nameof(FileNameTests)}.cs"));
         }
     }
 }

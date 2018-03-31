@@ -42,7 +42,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
 
         #endregion
 
-        [Fact(DisplayName = "Successfully get line number")]
+        [Fact(DisplayName = "Successfully get the exception's line number")]
         public void GetLineNumberSuccessfully()
         {
             Given(() => ThrowException())
@@ -50,7 +50,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
             .Then(lineNumber => lineNumber.Should().Be(34));
         }
 
-        [Fact(DisplayName = "Successfully get causing line number")]
+        [Fact(DisplayName = "Successfully get the exception's causing line number")]
         public void GetCausingLineNumberSuccessfully()
         {
             Given(() => ThrowException())
