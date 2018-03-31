@@ -7,7 +7,7 @@ namespace CustomCode.Core.ExceptionHandling
     /// </summary>
     /// <remarks>
     /// Note that all technical exceptions should be displayed to the user using a generalized
-    /// "Unexpected Exception" message (hiding the real cause of the problem from the user).
+    /// "Unexpected Exception" message (hiding the real cause of the problem from the application users).
     /// </remarks>
     public class TechnicalException : LocalizableException
     {
