@@ -4,6 +4,21 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>CustomCode.Core.ExceptionHandling</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/git-custom-code/Core-ExceptionHandling</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/git-custom-code/Core-ExceptionHandling</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>C#, ExceptionHandling</PackageTags>
+    <PackageLicenseUrl>https://github.com/git-custom-code/Core-ExceptionHandling/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>CustomCode.Core.ExceptionHandling</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.6\Core.ExceptionHandling.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.6\Core.ExceptionHandling.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,5 +29,9 @@
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.StackTrace" Version="4.3.0" />
   </ItemGroup>
+
+  <Target Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Name="PostBuild" AfterTargets="Pack">
+    <Exec Command="xcopy &quot;$(ProjectDir)bin\Release\*.nupkg&quot; &quot;$(SolutionDir)..\..\.nuget\packages\&quot; /Y /I" />
+  </Target>
 
 </Project>
