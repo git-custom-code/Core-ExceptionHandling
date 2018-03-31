@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Test.Core.DesignByContract")]
-[assembly: AssemblyDescription("Unit tests for the Core.DesignByContract assembly.")]
-[assembly: Guid("90759ef0-3971-43db-957f-9cb7f335e124")]
+[assembly: AssemblyTitle("Core.ExceptionHandling")]
+[assembly: AssemblyDescription("C# exception handling component")]
+[assembly: Guid("93c1c682-b5cf-4a9f-9f37-304f876af625")]

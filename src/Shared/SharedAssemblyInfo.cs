@@ -1,10 +1,10 @@
 using System.Reflection;
 
-[assembly: AssemblyProduct("Core.DesignByContract")]
+[assembly: AssemblyProduct("Core.ExceptionHandling")]
 
 [assembly: AssemblyCompany("CustomCode")]
 [assembly: AssemblyCopyright("Copyright © 2018")]
-[assembly: AssemblyTrademark("C# design by contract")]
+[assembly: AssemblyTrademark("C# exception handling component")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]

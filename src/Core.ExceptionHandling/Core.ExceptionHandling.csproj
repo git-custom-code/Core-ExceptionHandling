@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>CustomCode.Core.ExceptionHandling</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
