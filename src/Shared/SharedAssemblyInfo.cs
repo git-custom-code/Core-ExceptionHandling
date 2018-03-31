@@ -4,7 +4,7 @@ using System.Reflection;
 
 [assembly: AssemblyCompany("CustomCode")]
 [assembly: AssemblyCopyright("Copyright © 2018")]
-[assembly: AssemblyTrademark("C# exception handling component")]
+[assembly: AssemblyTrademark("C# extension methods and base types for exception handling")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
