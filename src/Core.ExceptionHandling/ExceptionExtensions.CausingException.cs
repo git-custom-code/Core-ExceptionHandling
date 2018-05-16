@@ -96,6 +96,15 @@ namespace CustomCode.Core.ExceptionHandling
                 return;
             }
 
+            if (exception is IAggregateException iAggregateException)
+            {
+                foreach (var innerException in iAggregateException.InnerExceptions)
+                {
+                    GetCausingExceptionsRecursively(innerException, ref result);
+                }
+                return;
+            }
+
             if (exception.InnerException == null)
             {
                 result.Add(exception);
