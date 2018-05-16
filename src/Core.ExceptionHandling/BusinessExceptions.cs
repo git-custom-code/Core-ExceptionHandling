@@ -9,7 +9,7 @@ namespace CustomCode.Core.ExceptionHandling
     /// Note that all business exceptions should contain a user friendly message text that can and
     /// should be displayed to the application users.
     /// </remarks>
-    public class BusinessException : LocalizableException
+    public class BusinessException : LocalizableException, IBusinessException
     {
         #region Dependencies
 
@@ -42,7 +42,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// if the application requires it. This message should not contain any informations that is irrelevant or
         /// confusing for the application users.
         /// </param>
-        /// <param name="innerException"> The exception that cause this exception to be thrown. </param>
+        /// <param name="innerException"> The exception that has caused this exception to be thrown. </param>
         /// <param name="developerMessage">
         /// The exception's message.
         /// Note that this message is not localized and should not be displayed to the application users.

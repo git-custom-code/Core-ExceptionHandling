@@ -8,7 +8,7 @@ namespace CustomCode.Core.ExceptionHandling
     /// This type will provide easy access to the exception's causing context and context
     /// as well as the innermost exception that started the exception chain.
     /// </summary>
-    public abstract class LocalizableException : Exception
+    public abstract class LocalizableException : Exception, ILocalizableException
     {
         #region Dependencies
 
@@ -45,7 +45,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// <summary>
         /// Creates a new instance of the <see cref="LocalizableException"/> type.
         /// </summary>
-        /// <param name="innerException"> The exception that cause this exception to be thrown. </param>
+        /// <param name="innerException"> The exception that has caused this exception to be thrown. </param>
         /// <param name="developerMessage">
         /// The exception's message.
         /// Note that this message is not localized and should not be displayed to the application users.

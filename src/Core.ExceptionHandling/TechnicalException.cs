@@ -9,7 +9,7 @@ namespace CustomCode.Core.ExceptionHandling
     /// Note that all technical exceptions should be displayed to the user using a generalized
     /// "Unexpected Exception" message (hiding the real cause of the problem from the application users).
     /// </remarks>
-    public class TechnicalException : LocalizableException
+    public class TechnicalException : LocalizableException, ITechnicalException
     {
         #region Dependencies
 
@@ -36,7 +36,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// <summary>
         /// Creates a new instance of the <see cref="TechnicalException"/> type.
         /// </summary>
-        /// <param name="innerException"> The exception that cause this exception to be thrown. </param>
+        /// <param name="innerException"> The exception that has caused this exception to be thrown. </param>
         /// <param name="developerMessage">
         /// The exception's message.
         /// Note that this message is not localized and should not be displayed to the application users.
