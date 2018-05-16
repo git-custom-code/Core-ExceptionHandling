@@ -1,19 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>CustomCode.Core.ExceptionHandling</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/git-custom-code/Core-ExceptionHandling</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/git-custom-code/Core-ExceptionHandling</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>C#, ExceptionHandling</PackageTags>
-    <PackageLicenseUrl>https://github.com/git-custom-code/Core-ExceptionHandling/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageId>CustomCode.Core.ExceptionHandling</PackageId>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PropertyGroup>
+        <IsPackable>True</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+        <PackageId>CustomCode.Core.ExceptionHandling</PackageId>
+        <PackageVersion>1.1.0</PackageVersion>
+        <Title>C# extension methods and base types for exception handling.</Title>
+        <Authors>CustomCode</Authors>
+        <Company>CustomCode</Company>
+        <Description>C# extension methods and base types for exception handling.</Description>
+        <Copyright>Copyright @ 2018</Copyright>
+        <PackageLicenseUrl>https://github.com/git-custom-code/Core-ExceptionHandling/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/git-custom-code/Core-ExceptionHandling</PackageProjectUrl>
+        <PackageTags>C#, ExceptionHandling</PackageTags>
+        <RepositoryUrl>https://github.com/git-custom-code/Core-ExceptionHandling</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.6\Core.ExceptionHandling.xml</DocumentationFile>
   </PropertyGroup>
 
