@@ -30,7 +30,7 @@ namespace CustomCode.Core.ExceptionHandling
         public TechnicalException(
             string developerMessage = "An unexpected technical exception has occured.",
             string userMessageResourceKey = DefaultResxKey)
-            : base(developerMessage, userMessageResourceKey)
+            : base(developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace CustomCode.Core.ExceptionHandling
             Exception innerException,
             string developerMessage = "An unexpected technical exception has occured.",
             string userMessageResourceKey = DefaultResxKey)
-            : base(innerException, developerMessage, userMessageResourceKey)
+            : base(innerException, developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         #endregion

@@ -30,7 +30,7 @@ namespace CustomCode.Core.ExceptionHandling
         public BusinessException(
             string userMessageResourceKey,
             string developerMessage = "An unexpected business exception has occured.")
-            : base(developerMessage, userMessageResourceKey)
+            : base(developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace CustomCode.Core.ExceptionHandling
             string userMessageResourceKey,
             Exception innerException,
             string developerMessage = "An unexpected business exception has occured.")
-            : base(innerException, developerMessage, userMessageResourceKey)
+            : base(innerException, developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         #endregion
