@@ -2,48 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <Title>C# extension methods and base types for exception handling.</Title>
+    <Description>C# extension methods and base types for exception handling.</Description>
     <RootNamespace>CustomCode.Core.ExceptionHandling</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-
-    <PropertyGroup>
-        <IsPackable>True</IsPackable>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-
-        <PackageId>CustomCode.Core.ExceptionHandling</PackageId>
-        <PackageVersion>1.1.0</PackageVersion>
-        <Title>C# extension methods and base types for exception handling.</Title>
-        <Authors>CustomCode</Authors>
-        <Company>CustomCode</Company>
-        <Description>C# extension methods and base types for exception handling.</Description>
-        <Copyright>Copyright @ 2018</Copyright>
-        <PackageLicenseUrl>https://github.com/git-custom-code/Core-ExceptionHandling/blob/master/LICENSE</PackageLicenseUrl>
-        <PackageProjectUrl>https://github.com/git-custom-code/Core-ExceptionHandling</PackageProjectUrl>
-        <PackageTags>C#, ExceptionHandling</PackageTags>
-        <RepositoryUrl>https://github.com/git-custom-code/Core-ExceptionHandling</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-    </PropertyGroup>
-
-
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.6\Core.ExceptionHandling.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.6\Core.ExceptionHandling.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="..\Shared\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
-    <Compile Include="..\Shared\SharedAssemblyVersion.cs" Link="Properties\SharedAssemblyVersion.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.StackTrace" Version="4.3.0" />
   </ItemGroup>
-
-  <Target Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Name="PostBuild" AfterTargets="Pack">
-    <Exec Command="xcopy &quot;$(ProjectDir)bin\Release\*.nupkg&quot; &quot;$(SolutionDir)..\..\.nuget\packages\&quot; /Y /I" />
-  </Target>
 
 </Project>

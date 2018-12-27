@@ -89,7 +89,7 @@ namespace CustomCode.Core.ExceptionHandling
 
         /// <summary> The exception's causing exceptions' contexts (see <see cref="ExceptionContext"/> for more details). </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private Lazy<ReadonlyCollection<ExceptionContext>> _causingContexts;
+        private readonly Lazy<ReadonlyCollection<ExceptionContext>> _causingContexts;
 
         #endregion
 
@@ -105,7 +105,7 @@ namespace CustomCode.Core.ExceptionHandling
 
         /// <summary> The exception's causing exceptions' contexts (see <see cref="ExceptionContext"/> for more details). </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private Lazy<ReadonlyCollection<Exception>> _causingExceptions;
+        private readonly Lazy<ReadonlyCollection<Exception>> _causingExceptions;
 
         #endregion
 
@@ -121,7 +121,7 @@ namespace CustomCode.Core.ExceptionHandling
 
         /// <summary> The exception's context (see <see cref="ExceptionContext"/> for more details). </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private Lazy<ExceptionContext> _context;
+        private readonly Lazy<ExceptionContext> _context;
 
         #endregion
 

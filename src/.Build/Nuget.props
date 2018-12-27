@@ -1,0 +1,15 @@
+<Project>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageVersion>$(SemVer)</PackageVersion>
+    <PackageProjectUrl>https://github.com/git-custom-code/Core-ExceptionHandling</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/git-custom-code/Core-ExceptionHandling</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>C#, ExceptionHandling</PackageTags>
+    <PackageLicenseUrl>https://github.com/git-custom-code/Core-ExceptionHandling/blob/master/LICENSE</PackageLicenseUrl>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+</Project>
