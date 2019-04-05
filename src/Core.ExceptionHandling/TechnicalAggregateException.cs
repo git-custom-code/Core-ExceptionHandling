@@ -32,7 +32,7 @@ namespace CustomCode.Core.ExceptionHandling
         public TechnicalAggregateException(
             string developerMessage = "An unexpected technical aggregate exception has occured.",
             string userMessageResourceKey = DefaultResxKey)
-            : base(developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
+            : base(developerMessage, string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         {
             InnerExceptions = new ReadonlyCollection<Exception>(null);
         }
@@ -59,7 +59,7 @@ namespace CustomCode.Core.ExceptionHandling
             : base(
                   (innerExceptions?.Count() > 0) ? innerExceptions.First() : null,
                   developerMessage,
-                  string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
+                  string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         {
             InnerExceptions = new ReadonlyCollection<Exception>(innerExceptions);
         }

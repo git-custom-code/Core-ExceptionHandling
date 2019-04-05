@@ -15,7 +15,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
             try
             {
                 ThrowAndRethrowExceptionFromLevel2();
-                return null;
+                return new Exception("Unreachable code");
             }
             catch(Exception e)
             {
@@ -67,10 +67,11 @@ namespace CustomCode.Core.ExceptionHandling.Tests
                 })
             .Then(context =>
                 {
-                    context.FileName.Should().EndWith($"{nameof(ContextTests)}.cs");
-                    context.LineNumber.Should().Be(40);
-                    context.MethodName.Should().Be($"{nameof(ThrowExceptionFromLevel3)}");
-                    context.TypeName.Should().Be($"{nameof(ContextTests)}");
+                    context.ShouldNot().BeNull();
+                    context?.FileName.Should().EndWith($"{nameof(ContextTests)}.cs");
+                    context?.LineNumber.Should().Be(40);
+                    context?.MethodName.Should().Be($"{nameof(ThrowExceptionFromLevel3)}");
+                    context?.TypeName.Should().Be($"{nameof(ContextTests)}");
                 });
         }
     }

@@ -17,13 +17,8 @@ namespace CustomCode.Core.ExceptionHandling
         /// </summary>
         /// <param name="exception"> The exception to act on. </param>
         /// <returns> The name of the method that has raised the specified <paramref name="exception"/>. </returns>
-        public static string GetMethodName(this Exception exception)
+        public static string? GetMethodName(this Exception exception)
         {
-            if (exception == null)
-            {
-                return null;
-            }
-
             var trace = new StackTrace(exception, true);
             var frames = trace.GetFrames();
             if (frames?.Length > 0)
@@ -47,7 +42,11 @@ namespace CustomCode.Core.ExceptionHandling
             var result = new List<string>();
             foreach (var causingException in exception.GetCausingExceptions())
             {
-                result.Add(GetMethodName(causingException));
+                var causingMethodName = GetMethodName(causingException);
+                if (!string.IsNullOrEmpty(causingMethodName))
+                {
+                    result.Add(causingMethodName);
+                }
             }
             return result;
         }
@@ -65,7 +64,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// True if the specified <paramref name="exception"/>'s causing exception's method name
         /// was found, false otherwise.
         /// </returns>
-        public static bool TryGetCausingMethodName(this Exception exception, out string causingMethodName)
+        public static bool TryGetCausingMethodName(this Exception exception, out string? causingMethodName)
         {
             var causingExceptions = GetCausingExceptions(exception);
             if (causingExceptions.Count() == 1)

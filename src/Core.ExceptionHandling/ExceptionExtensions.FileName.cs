@@ -21,13 +21,8 @@ namespace CustomCode.Core.ExceptionHandling
         /// The name of the sourcecode file where the specified <paramref name="exception"/> was raised
         /// (if pdb's are deployed) or null otherwise.
         /// </returns>
-        public static string GetFileName(this Exception exception)
+        public static string? GetFileName(this Exception exception)
         {
-            if (exception == null)
-            {
-                return null;
-            }
-
             var trace = new StackTrace(exception, true);
             var frames = trace.GetFrames();
             if (frames?.Length > 0)
@@ -51,9 +46,9 @@ namespace CustomCode.Core.ExceptionHandling
         /// The names of the sourcecode files where the specified <paramref name="exception"/>'s
         /// causing exceptions were raised if pdb's are deployed or null otherwise.
         /// </returns>
-        public static IEnumerable<string> GetCausingFileNames(this Exception exception)
+        public static IEnumerable<string?> GetCausingFileNames(this Exception exception)
         {
-            var result = new List<string>();
+            var result = new List<string?>();
             foreach (var causingException in exception.GetCausingExceptions())
             {
                 result.Add(GetFileName(causingException));
@@ -75,7 +70,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// True if the specified <paramref name="exception"/>'s causing exception's sourcecode file
         /// was found, false otherwise.
         /// </returns>
-        public static bool TryGetCausingFileName(this Exception exception, out string causingFileName)
+        public static bool TryGetCausingFileName(this Exception exception, out string? causingFileName)
         {
             var causingExceptions = GetCausingExceptions(exception);
             if (causingExceptions.Count() == 1)

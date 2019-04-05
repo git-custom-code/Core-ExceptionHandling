@@ -57,7 +57,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// if the application requires it. This message should not contain any informations that is irrelevant or
         /// confusing for the application users.
         /// </param>
-        protected LocalizableException(Exception innerException, string developerMessage, string userMessageResourceKey = DefaultResxKey)
+        protected LocalizableException(Exception? innerException, string developerMessage, string userMessageResourceKey = DefaultResxKey)
             : base(developerMessage ?? $"Localizable exception with ResourceKey: {userMessageResourceKey}", innerException)
         {
             if (string.IsNullOrWhiteSpace(userMessageResourceKey))
@@ -144,7 +144,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// localization purposes.
         /// </summary>
         /// <returns> The exception's format items for localization or null. </returns>
-        public abstract object[] GetFormatItems();
+        public abstract object[]? GetFormatItems();
 
         /// <summary>
         /// Converts this instance to a human readable string representation.

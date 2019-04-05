@@ -45,6 +45,6 @@ namespace CustomCode.Core.ExceptionHandling
         /// localization purposes.
         /// </summary>
         /// <returns> The exception's format items for localization or null. </returns>
-        object[] GetFormatItems();
+        object[]? GetFormatItems();
     }
 }

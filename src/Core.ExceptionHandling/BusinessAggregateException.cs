@@ -32,7 +32,7 @@ namespace CustomCode.Core.ExceptionHandling
         public BusinessAggregateException(
             string userMessageResourceKey,
             string developerMessage = "An unexpected business aggregate exception has occured.")
-            : base(string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey, developerMessage)
+            : base(string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey, developerMessage)
         {
             InnerExceptions = new ReadonlyCollection<Exception>(null);
         }
@@ -57,7 +57,7 @@ namespace CustomCode.Core.ExceptionHandling
             IEnumerable<Exception> innerExceptions,
             string developerMessage = "An unexpected business aggregate exception has occured.")
             : base(
-                  string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey,
+                  string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey,
                   (innerExceptions?.Count() > 0) ? innerExceptions.First() : null,
                   developerMessage)
         {

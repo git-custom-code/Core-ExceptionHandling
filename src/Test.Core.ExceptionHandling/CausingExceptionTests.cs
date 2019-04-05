@@ -23,7 +23,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
             try
             {
                 ThrowAndRethrowExceptionFromLevel2();
-                return null;
+                return new Exception("Unreachable code");
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
                 var task1 = Task.Run(() => ThrowAndRethrowExceptionFromLevel2());
                 var task2 = Task.Run(() => ThrowExceptionFromLevel3());
                 Task.WaitAll(task1, task2);
-                return null;
+                return new Exception("Unreachable code");
             }
             catch(Exception ex)
             {
@@ -69,7 +69,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
             {
                 var task = Task.Run(() => ThrowAndRethrowExceptionFromLevel2());
                 Task.WaitAll(task);
-                return null;
+                return new Exception("Unreachable code");
             }
             catch (Exception ex)
             {
@@ -100,7 +100,11 @@ namespace CustomCode.Core.ExceptionHandling.Tests
                     exception.TryGetCausingException(out var causingException);
                     return causingException;
                 })
-            .Then(causingException => causingException.Message.Should().Be("Level 3"));
+            .Then(causingException =>
+                {
+                    causingException.ShouldNot().BeNull();
+                    causingException?.Message.Should().Be("Level 3");
+                });
         }
 
         [Fact(DisplayName = "Successfully get a single causing exception from an asynchronous task")]
@@ -112,7 +116,11 @@ namespace CustomCode.Core.ExceptionHandling.Tests
                     exception.TryGetCausingException(out var causingException);
                     return causingException;
                 })
-            .Then(causingException => causingException.Message.Should().Be("Level 3"));
+            .Then(causingException =>
+                {
+                    causingException.ShouldNot().BeNull();
+                    causingException?.Message.Should().Be("Level 3");
+                });
         }
 
         [Fact(DisplayName = "Successfully get null as causing exception from multiple asynchronous tasks")]

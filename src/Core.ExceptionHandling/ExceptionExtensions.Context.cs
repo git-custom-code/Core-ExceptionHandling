@@ -21,16 +21,11 @@ namespace CustomCode.Core.ExceptionHandling
         /// </returns>
         public static ExceptionContext GetContext(this Exception exception)
         {
-            if (exception == null)
-            {
-                return null;
-            }
-
             var methodName = GetMethodName(exception);
             var typeName = GetTypeName(exception);
             var fileName = GetFileName(exception);
             var lineNumber = GetLineNumber(exception);
-            return new ExceptionContext(methodName, typeName, fileName, lineNumber);
+            return new ExceptionContext(methodName ?? "UnknownMethod", typeName ?? "UnkownType", fileName, lineNumber);
         }
 
         /// <summary>
@@ -63,7 +58,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// True if the specified <paramref name="exception"/>'s causing exception's context
         /// was found, false otherwise.
         /// </returns>
-        public static bool TryGetCausingContext(this Exception exception, out ExceptionContext causingContext)
+        public static bool TryGetCausingContext(this Exception exception, out ExceptionContext? causingContext)
         {
             var causingExceptions = GetCausingExceptions(exception);
             if (causingExceptions.Count() == 1)

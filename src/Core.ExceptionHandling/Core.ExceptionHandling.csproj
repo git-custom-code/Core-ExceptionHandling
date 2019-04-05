@@ -7,6 +7,10 @@
     <RootNamespace>CustomCode.Core.ExceptionHandling</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <NoWarn>NU5105</NoWarn>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.StackTrace" Version="4.3.0" />
   </ItemGroup>

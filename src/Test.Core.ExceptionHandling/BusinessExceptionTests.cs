@@ -16,7 +16,7 @@ namespace CustomCode.Core.ExceptionHandling.Tests
             try
             {
                 ThrowAndRethrowExceptionFromLevel2();
-                return null;
+                return new object();
             }
             catch(Exception e)
             {

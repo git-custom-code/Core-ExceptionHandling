@@ -30,7 +30,7 @@ namespace CustomCode.Core.ExceptionHandling
         public BusinessException(
             string userMessageResourceKey,
             string developerMessage = "An unexpected business exception has occured.")
-            : base(developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
+            : base(developerMessage, string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         /// <summary>
@@ -50,9 +50,9 @@ namespace CustomCode.Core.ExceptionHandling
         /// </param>
         public BusinessException(
             string userMessageResourceKey,
-            Exception innerException,
+            Exception? innerException,
             string developerMessage = "An unexpected business exception has occured.")
-            : base(innerException, developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
+            : base(innerException, developerMessage, string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         #endregion
@@ -73,7 +73,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// localization purposes.
         /// </summary>
         /// <returns> The exception's format items for localization or null. </returns>
-        public override object[] GetFormatItems()
+        public override object[]? GetFormatItems()
         {
             return null;
         }

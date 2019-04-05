@@ -30,7 +30,7 @@ namespace CustomCode.Core.ExceptionHandling
         public TechnicalException(
             string developerMessage = "An unexpected technical exception has occured.",
             string userMessageResourceKey = DefaultResxKey)
-            : base(developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
+            : base(developerMessage, string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         /// <summary>
@@ -49,10 +49,10 @@ namespace CustomCode.Core.ExceptionHandling
         /// confusing for the application users.
         /// </param>
         public TechnicalException(
-            Exception innerException,
+            Exception? innerException,
             string developerMessage = "An unexpected technical exception has occured.",
             string userMessageResourceKey = DefaultResxKey)
-            : base(innerException, developerMessage, string.IsNullOrEmpty(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
+            : base(innerException, developerMessage, string.IsNullOrWhiteSpace(userMessageResourceKey) ? DefaultResxKey : userMessageResourceKey)
         { }
 
         #endregion
@@ -73,7 +73,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// localization purposes.
         /// </summary>
         /// <returns> The exception's format items for localization or null. </returns>
-        public override object[] GetFormatItems()
+        public override object[]? GetFormatItems()
         {
             return null;
         }

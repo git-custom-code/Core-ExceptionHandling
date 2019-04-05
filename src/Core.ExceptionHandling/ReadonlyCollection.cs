@@ -18,9 +18,9 @@ namespace CustomCode.Core.ExceptionHandling
         /// Creates a new instance of the <see cref="ReadonlyCollection{T}"/> type.
         /// </summary>
         /// <param name="data"> The collection's readonly data. </param>
-        public ReadonlyCollection(IEnumerable<T> data)
+        public ReadonlyCollection(IEnumerable<T>? data)
         {
-            Data = data;
+            Data = data ?? Enumerable.Empty<T>();
         }
 
         #endregion
@@ -66,7 +66,7 @@ namespace CustomCode.Core.ExceptionHandling
         {
             if (Data?.Count() == 1)
             {
-                return Data.First()?.ToString();
+                return Data.First()?.ToString() ?? "null";
             }
 
             return $"Count = {Data?.Count()}";

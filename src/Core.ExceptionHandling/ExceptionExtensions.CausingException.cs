@@ -41,7 +41,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// <returns>
         /// True if the innermost exception was found or false if no excpetion or more than one exception was found.
         /// </returns>
-        public static bool TryGetCausingException(this Exception exception, out Exception causingException)
+        public static bool TryGetCausingException(this Exception exception, out Exception? causingException)
         {
             return TryGetCausingException(exception, out causingException, out _);
         }
@@ -57,7 +57,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// <returns>
         /// True if the innermost exception was found or false if no excpetion or more than one exception was found.
         /// </returns>
-        public static bool TryGetCausingException(this Exception exception, out Exception causingException, out uint causingExceptionCount)
+        public static bool TryGetCausingException(this Exception exception, out Exception? causingException, out uint causingExceptionCount)
         {
             if (exception?.InnerException == null)
             {

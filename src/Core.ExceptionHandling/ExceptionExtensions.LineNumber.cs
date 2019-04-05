@@ -19,11 +19,6 @@ namespace CustomCode.Core.ExceptionHandling
         /// <returns> The line number inside of the sourcecode file where the specified <paramref name="exception"/> was raised. </returns>
         public static uint? GetLineNumber(this Exception exception)
         {
-            if (exception == null)
-            {
-                return 0;
-            }
-
             var trace = new StackTrace(exception, true);
             var frames = trace.GetFrames();
             if (frames?.Length > 0)

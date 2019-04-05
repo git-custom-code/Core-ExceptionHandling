@@ -20,7 +20,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// <param name="typeName"> The name of the type that has raised the associated exception. </param>
         /// <param name="fileName"> The name of the sourcecode file where the associated exception was raised. </param>
         /// <param name="lineNumber"> The line number inside of the sourcecode file where the associated exception was raised. </param>
-        public ExceptionContext(string methodName, string typeName, string fileName = null, uint? lineNumber = null)
+        public ExceptionContext(string methodName, string typeName, string? fileName = null, uint? lineNumber = null)
         {
             MethodName = methodName;
             TypeName = typeName;
@@ -38,7 +38,7 @@ namespace CustomCode.Core.ExceptionHandling
         /// <remarks>
         /// This will only work if pdb's are deployed, otherwise null is returned.
         /// </remarks>
-        public string FileName { get; }
+        public string? FileName { get; }
 
         /// <summary>
         /// Gets the line number inside of the sourcecode file where the associated exception was raised.
