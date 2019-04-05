@@ -1,9 +1,9 @@
 <Project>
 
   <PropertyGroup>
-    <Version>1.1.1</Version>
+    <Version>1.3.0</Version>
     <FileVersion>$(Version)</FileVersion>
-    <SemVer>$(Version)-rc.3</SemVer>
+    <SemVer>$(Version)</SemVer>
     <InformationalVersion>$(SemVer)+build.developer</InformationalVersion>
   </PropertyGroup>
 
